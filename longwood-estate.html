@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Longwood Estate — South Wairarapa, New Zealand</title>
+<meta name="description" content="A Category 1 heritage country house near Martinborough — weddings, private stays, corporate retreats, and curated events in the South Wairarapa."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:#1a1a17;color:#e8e2d8;font-weight:300;}
+.serif{font-family:'Cormorant Garamond',serif;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:64px;background:rgba(14,14,11,0.95);backdrop-filter:blur(8px);border-bottom:0.5px solid rgba(200,185,139,0.18);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;letter-spacing:0.18em;color:#c8b98b;text-transform:uppercase;text-decoration:none;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#706860;text-decoration:none;font-weight:400;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:#c8b98b;}
+.nav-cta{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#1a1a17;background:#c8b98b;border:none;padding:9px 20px;cursor:pointer;font-family:'Jost',sans-serif;font-weight:500;}
+
+/* PAGE TABS */
+.page{display:none;}
+.page.active{display:block;}
+
+/* TAB BAR */
+.tab-bar{background:#141410;border-bottom:0.5px solid rgba(200,185,139,0.15);display:flex;padding:0 3rem;}
+.tab-btn{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#504848;background:none;border:none;border-bottom:1.5px solid transparent;padding:1rem 1.2rem 0.9rem;cursor:pointer;font-family:'Jost',sans-serif;font-weight:400;transition:all 0.2s;}
+.tab-btn:hover{color:#c8b98b;}
+.tab-btn.active{color:#c8b98b;border-bottom-color:#c8b98b;}
+
+/* SHARED */
+.eyebrow{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#c8b98b;margin-bottom:1.2rem;font-weight:400;}
+.h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,7vw,88px);font-weight:300;line-height:0.92;color:#f0e8d8;letter-spacing:-0.01em;}
+.h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,48px);font-weight:300;color:#f0e8d8;line-height:1.1;}
+.h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:#e8e2d8;line-height:1.2;}
+.body-text{font-size:14px;font-weight:300;color:#908880;line-height:1.9;}
+.divider{width:100%;height:0.5px;background:rgba(200,185,139,0.15);}
+.btn-gold{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#1a1a17;background:#c8b98b;border:none;padding:13px 28px;cursor:pointer;font-family:'Jost',sans-serif;font-weight:500;}
+.btn-ghost{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#c8b98b;background:transparent;border:0.5px solid rgba(200,185,139,0.4);padding:13px 28px;cursor:pointer;font-family:'Jost',sans-serif;font-weight:400;}
+.pill{display:inline-block;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;border:0.5px solid rgba(200,185,139,0.4);padding:4px 10px;color:#c8b98b;margin-bottom:1rem;}
+.dotlist{list-style:none;}
+.dotlist li{font-size:13px;font-weight:300;color:#908880;padding:0.7rem 0;border-bottom:0.5px solid rgba(200,185,139,0.1);display:flex;align-items:center;gap:0.7rem;}
+.dot{width:3px;height:3px;border-radius:50%;background:#c8b98b;flex-shrink:0;}
+.lw-input{background:rgba(200,185,139,0.06);border:0.5px solid rgba(200,185,139,0.25);padding:12px 14px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#e8e2d8;letter-spacing:0.03em;outline:none;width:100%;}
+.lw-input::placeholder{color:#504848;}
+.lw-select{background:rgba(200,185,139,0.06);border:0.5px solid rgba(200,185,139,0.25);padding:12px 14px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#e8e2d8;letter-spacing:0.03em;outline:none;width:100%;appearance:none;}
+.lw-select option{background:#1a1a17;}
+.lw-textarea{background:rgba(200,185,139,0.06);border:0.5px solid rgba(200,185,139,0.25);padding:12px 14px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#e8e2d8;letter-spacing:0.03em;outline:none;width:100%;resize:none;}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid rgba(200,185,139,0.2);margin-top:2rem;}
+.stat{padding:1.2rem 0;border-bottom:0.5px solid rgba(200,185,139,0.1);}
+.stat:nth-child(odd){border-right:0.5px solid rgba(200,185,139,0.1);padding-right:1rem;}
+.stat:nth-child(even){padding-left:1rem;}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:#c8b98b;line-height:1;}
+.stat-l{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504848;margin-top:0.2rem;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,185,139,0.1);}
+.avail-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.avail-dot.open{background:#8faf6f;}
+.avail-dot.limited{background:#c8b98b;}
+.avail-dot.sold{background:#704848;}
+
+/* HERO */
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;background:#1a1a17;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:#0e0e0b;}
+.hero-svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(14,14,11,0.15) 0%,rgba(14,14,11,0.88) 100%);}
+.hero-content{position:relative;z-index:2;padding:0 3rem 5rem;max-width:700px;}
+.hero-eyebrow{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#c8b98b;margin-bottom:1.2rem;font-weight:400;}
+.hero-sub{font-size:14px;font-weight:300;color:#a09888;max-width:380px;line-height:1.8;margin-bottom:2.5rem;}
+.btn-pair{display:flex;gap:1rem;align-items:center;}
+
+/* COMPANION */
+.companion{background:#c8b98b;padding:11px 3rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+.companion-text{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#1a1a17;font-weight:500;}
+.companion-link{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#1a1a17;font-weight:400;text-decoration:underline;text-underline-offset:3px;cursor:pointer;}
+.companion-sep{width:1px;height:12px;background:rgba(26,26,23,0.3);}
+
+/* SECTIONS */
+.section{padding:6rem 3rem;}
+.section-dark{padding:5rem 3rem;background:#141410;}
+.section-black{padding:5rem 3rem;background:#0e0e0b;}
+
+/* CARDS */
+.offering-card{background:#141410;padding:2.5rem 2rem;cursor:default;transition:background 0.25s;border:0.5px solid transparent;}
+.offering-card:hover{background:#1e1e1a;border-color:rgba(200,185,139,0.15);}
+.card-link{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#c8b98b;font-weight:400;display:flex;align-items:center;gap:0.5rem;margin-top:1.2rem;}
+
+/* GROUNDS */
+.grounds-split{display:grid;grid-template-columns:1fr 1fr;min-height:420px;}
+.grounds-text{padding:4rem 3rem;background:#1a1a17;display:flex;flex-direction:column;justify-content:center;}
+
+/* CINEMATIC */
+.cinematic{background:#0e0e0b;padding:5rem 3rem;display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:center;}
+.quote{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;font-style:italic;color:#f0e8d8;line-height:1.4;border-left:1px solid #c8b98b;padding-left:2rem;margin-top:2rem;}
+.quote-attr{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#706860;margin-top:1rem;padding-left:2rem;}
+.cinematic-badge{display:inline-block;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:#c8b98b;border:0.5px solid rgba(200,185,139,0.4);padding:6px 12px;margin-bottom:2rem;}
+
+/* EVENTS */
+.event-card{background:#1a1a17;padding:2rem;cursor:default;transition:background 0.2s;}
+.event-card:hover{background:#222218;}
+.event-date{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#c8b98b;margin-bottom:0.8rem;}
+.event-price{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:#c8b98b;margin-top:1rem;}
+
+/* REGION */
+.proximity-item{display:flex;align-items:baseline;gap:1rem;padding:1rem 0;border-bottom:0.5px solid rgba(200,185,139,0.12);}
+.proximity-time{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:#c8b98b;min-width:88px;line-height:1;}
+.proximity-label{font-size:13px;font-weight:300;color:#908880;}
+.partner-box{background:#1a1a17;border:0.5px solid rgba(200,185,139,0.2);padding:2rem;margin-top:1px;}
+.partner-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#c8b98b;margin-bottom:0.8rem;}
+
+/* ENQUIRE */
+.enquire{background:#c8b98b;padding:5rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.enquire-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;color:#1a1a17;line-height:1.1;}
+.enquire-input{background:rgba(26,26,23,0.1);border:0.5px solid rgba(26,26,23,0.25);padding:12px 14px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#1a1a17;letter-spacing:0.03em;outline:none;width:100%;}
+.enquire-input::placeholder{color:rgba(26,26,23,0.4);}
+.enquire-select{background:rgba(26,26,23,0.1);border:0.5px solid rgba(26,26,23,0.25);padding:12px 14px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#1a1a17;letter-spacing:0.03em;outline:none;width:100%;appearance:none;}
+.enquire-textarea{background:rgba(26,26,23,0.1);border:0.5px solid rgba(26,26,23,0.25);padding:12px 14px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#1a1a17;outline:none;width:100%;resize:none;}
+.btn-dark{background:#1a1a17;color:#c8b98b;border:none;padding:13px 28px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;cursor:pointer;}
+
+/* FOOTER */
+footer{background:#0e0e0b;padding:4rem 3rem 2rem;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:0.5px solid rgba(200,185,139,0.15);margin-bottom:2rem;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:0.15em;color:#c8b98b;text-transform:uppercase;margin-bottom:1rem;}
+.footer-tagline{font-size:12px;color:#504840;font-weight:300;line-height:1.8;max-width:240px;}
+.footer-col-title{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#706860;margin-bottom:1.2rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+.footer-col a{font-size:12px;color:#504840;font-weight:300;text-decoration:none;}
+.footer-col a:hover{color:#c8b98b;}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;font-size:10px;color:#3a3228;letter-spacing:0.1em;text-transform:uppercase;}
+.heritage-badge{display:flex;align-items:center;gap:0.5rem;font-size:9px;letter-spacing:0.15em;color:#c8b98b;text-transform:uppercase;border:0.5px solid rgba(200,185,139,0.3);padding:5px 10px;margin-top:1.5rem;}
+
+/* WEDDINGS */
+.pkg-card{background:#141410;border:0.5px solid rgba(200,185,139,0.15);padding:2rem;transition:border-color 0.2s;}
+.pkg-card:hover{border-color:rgba(200,185,139,0.4);}
+.pkg-card.featured{border-color:rgba(200,185,139,0.5);}
+.pkg-price{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:#c8b98b;line-height:1;margin:0.6rem 0 0.2rem;}
+.pkg-from{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504848;}
+
+/* STAY */
+.room-card{display:grid;grid-template-columns:1fr 1fr;border:0.5px solid rgba(200,185,139,0.15);background:#141410;}
+.room-info{padding:2rem;}
+.pkg-row{background:#141410;padding:1.5rem;display:grid;grid-template-columns:1fr auto;align-items:start;gap:1rem;}
+.pkg-row-price{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:#c8b98b;line-height:1;}
+
+/* EVENTS INNER */
+.event-row{display:grid;grid-template-columns:110px 1fr auto;gap:2rem;align-items:start;padding:2rem 0;border-bottom:0.5px solid rgba(200,185,139,0.12);}
+.event-row:first-of-type{border-top:0.5px solid rgba(200,185,139,0.12);}
+.ev-month{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#c8b98b;}
+.ev-day{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:#c8b98b;line-height:1;}
+.ev-year{font-size:10px;letter-spacing:0.1em;color:#504848;}
+.ev-price{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#c8b98b;line-height:1;}
+
+@media(max-width:768px){
+  nav{padding:0 1.5rem;}
+  .nav-links{display:none;}
+  .hero-content,.section,.section-dark,.section-black,.enquire,.cinematic,.footer-top{padding-left:1.5rem;padding-right:1.5rem;}
+  .grid2,.grounds-split,.cinematic,.enquire,.footer-top{grid-template-columns:1fr;}
+  .grid3{grid-template-columns:1fr;}
+  .room-card{grid-template-columns:1fr;}
+  .event-row{grid-template-columns:80px 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">Longwood</a>
+  <ul class="nav-links">
+    <li><a href="#home" onclick="showPage('home');return false;" class="active" id="nav-home">The Estate</a></li>
+    <li><a href="#weddings" onclick="showPage('weddings');return false;" id="nav-weddings">Weddings</a></li>
+    <li><a href="#stay" onclick="showPage('stay');return false;" id="nav-stay">Stay</a></li>
+    <li><a href="#events" onclick="showPage('events');return false;" id="nav-events">Events</a></li>
+    <li><a href="#home" onclick="showPage('home');scrollToEnquire();return false;">Region</a></li>
+  </ul>
+  <button class="nav-cta" onclick="showPage('home');scrollToEnquire();">Enquire</button>
+</nav>
+
+<!-- ═══ HOME PAGE ═══ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <svg class="hero-svg" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <rect width="900" height="560" fill="#0e0e0b"/>
+      <rect width="900" height="320" fill="#161410"/>
+      <circle cx="700" cy="90" r="44" fill="none" stroke="#c8b98b" stroke-width="0.5" opacity="0.25"/>
+      <circle cx="700" cy="90" r="28" fill="#c8b98b" opacity="0.05"/>
+      <circle cx="120" cy="55" r="1" fill="#c8b98b" opacity="0.4"/>
+      <circle cx="230" cy="30" r="0.8" fill="#c8b98b" opacity="0.3"/>
+      <circle cx="400" cy="65" r="1.2" fill="#c8b98b" opacity="0.3"/>
+      <circle cx="560" cy="42" r="0.8" fill="#c8b98b" opacity="0.25"/>
+      <circle cx="820" cy="115" r="1" fill="#c8b98b" opacity="0.2"/>
+      <circle cx="50" cy="130" r="0.8" fill="#c8b98b" opacity="0.2"/>
+      <rect y="320" width="900" height="240" fill="#141210"/>
+      <rect x="40" y="170" width="14" height="168" fill="#1e1c18"/>
+      <ellipse cx="47" cy="162" rx="36" ry="62" fill="#1e1c18"/>
+      <rect x="68" y="205" width="9" height="133" fill="#1a1814"/>
+      <ellipse cx="72" cy="198" rx="22" ry="44" fill="#1a1814"/>
+      <rect x="800" y="160" width="14" height="178" fill="#1e1c18"/>
+      <ellipse cx="807" cy="152" rx="38" ry="65" fill="#1e1c18"/>
+      <rect x="824" y="188" width="10" height="150" fill="#1a1814"/>
+      <ellipse cx="829" cy="181" rx="24" ry="48" fill="#1a1814"/>
+      <rect x="195" y="175" width="510" height="200" fill="#1c1a16" stroke="#2a2820" stroke-width="0.5"/>
+      <polygon points="178,175 450,100 722,175" fill="#181614" stroke="#2a2820" stroke-width="0.5"/>
+      <rect x="380" y="116" width="140" height="65" fill="#201e1a" stroke="#2a2820" stroke-width="0.5"/>
+      <polygon points="380,116 450,88 520,116" fill="#1a1814" stroke="#2a2820" stroke-width="0.5"/>
+      <rect x="410" y="94" width="80" height="30" fill="#181614"/>
+      <rect x="230" y="215" width="62" height="90" fill="#0e0e0b" stroke="#c8b98b" stroke-width="0.3" opacity="0.7"/>
+      <line x1="261" y1="215" x2="261" y2="305" stroke="#c8b98b" stroke-width="0.3" opacity="0.35"/>
+      <line x1="230" y1="260" x2="292" y2="260" stroke="#c8b98b" stroke-width="0.3" opacity="0.35"/>
+      <rect x="230.5" y="215.5" width="30" height="44" fill="#c8b98b" opacity="0.05"/>
+      <rect x="322" y="215" width="62" height="90" fill="#0e0e0b" stroke="#c8b98b" stroke-width="0.3" opacity="0.7"/>
+      <line x1="353" y1="215" x2="353" y2="305" stroke="#c8b98b" stroke-width="0.3" opacity="0.35"/>
+      <line x1="322" y1="260" x2="384" y2="260" stroke="#c8b98b" stroke-width="0.3" opacity="0.35"/>
+      <rect x="322.5" y="215.5" width="30" height="44" fill="#c8b98b" opacity="0.07"/>
+      <rect x="405" y="235" width="90" height="140" fill="#0e0e0b" stroke="#c8b98b" stroke-width="0.4" opacity="0.8"/>
+      <path d="M405,235 Q450,208 495,235" fill="none" stroke="#c8b98b" stroke-width="0.4" opacity="0.55"/>
+      <line x1="450" y1="235" x2="450" y2="375" stroke="#c8b98b" stroke-width="0.35" opacity="0.35"/>
+      <rect x="405.5" y="235.5" width="44" height="139" fill="#c8b98b" opacity="0.03"/>
+      <rect x="516" y="215" width="62" height="90" fill="#0e0e0b" stroke="#c8b98b" stroke-width="0.3" opacity="0.7"/>
+      <line x1="547" y1="215" x2="547" y2="305" stroke="#c8b98b" stroke-width="0.3" opacity="0.35"/>
+      <line x1="516" y1="260" x2="578" y2="260" stroke="#c8b98b" stroke-width="0.3" opacity="0.35"/>
+      <rect x="608" y="215" width="62" height="90" fill="#0e0e0b" stroke="#c8b98b" stroke-width="0.3" opacity="0.7"/>
+      <line x1="639" y1="215" x2="639" y2="305" stroke="#c8b98b" stroke-width="0.3" opacity="0.35"/>
+      <line x1="608" y1="260" x2="670" y2="260" stroke="#c8b98b" stroke-width="0.3" opacity="0.35"/>
+      <rect x="608.5" y="215.5" width="30" height="44" fill="#c8b98b" opacity="0.05"/>
+      <rect x="244" y="182" width="40" height="28" fill="#0e0e0b" stroke="#c8b98b" stroke-width="0.25" opacity="0.5"/>
+      <rect x="336" y="182" width="40" height="28" fill="#0e0e0b" stroke="#c8b98b" stroke-width="0.25" opacity="0.5"/>
+      <rect x="524" y="182" width="40" height="28" fill="#0e0e0b" stroke="#c8b98b" stroke-width="0.25" opacity="0.5"/>
+      <rect x="616" y="182" width="40" height="28" fill="#0e0e0b" stroke="#c8b98b" stroke-width="0.25" opacity="0.5"/>
+      <rect x="416" y="130" width="32" height="24" fill="#0e0e0b" stroke="#c8b98b" stroke-width="0.25" opacity="0.55"/>
+      <rect x="452" y="130" width="32" height="24" fill="#0e0e0b" stroke="#c8b98b" stroke-width="0.25" opacity="0.55"/>
+      <rect x="416.5" y="130.5" width="16" height="12" fill="#c8b98b" opacity="0.06"/>
+      <rect x="392" y="371" width="116" height="7" fill="#252320"/>
+      <rect x="400" y="378" width="100" height="6" fill="#201e1c"/>
+      <ellipse cx="450" cy="420" rx="220" ry="28" fill="#1a1814" opacity="0.5"/>
+      <rect y="375" width="900" height="185" fill="#141210"/>
+      <line x1="370" y1="560" x2="418" y2="380" stroke="#1e1c18" stroke-width="10"/>
+      <line x1="530" y1="560" x2="482" y2="380" stroke="#1e1c18" stroke-width="10"/>
+      <ellipse cx="450" cy="385" rx="34" ry="7" fill="#c8b98b" opacity="0.07"/>
+    </svg>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Heritage New Zealand Category 1 · Est. 1850</p>
+      <h1 class="serif h1">Longwood</h1>
+      <p class="hero-sub">Reputedly New Zealand's largest private home — a grand English country house near Martinborough, in the heart of the South Wairarapa.</p>
+      <div class="btn-pair">
+        <button class="btn-gold" onclick="showPage('weddings')">Plan a wedding</button>
+        <button class="btn-ghost" onclick="showPage('stay')">Stay at Longwood</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANION -->
+  <div class="companion">
+    <span class="companion-text">Companion Manor</span>
+    <div class="companion-sep"></div>
+    <span class="companion-text">Longwood &amp; Fernside — two historic Wairarapa estates, one collection.</span>
+    <div class="companion-sep"></div>
+    <a href="https://fernside.garden" target="_blank" class="companion-link">Visit Fernside Gardens →</a>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section">
+    <div class="grid2" style="align-items:center;">
+      <div>
+        <p class="eyebrow">The House</p>
+        <h2 class="serif h2">A century in the making</h2>
+        <p class="body-text" style="margin-top:1.2rem;">Named after Napoleon's final home on St Helena, Longwood was established as a sheep station in the 1850s before the present house — designed in the manner of Lutyens — was completed in 1921. Its gracious neo-Georgian interior, ornate ceilings, Adam fireplaces, and grand staircase make it one of New Zealand's most distinguished private homes.</p>
+        <p class="body-text" style="margin-top:1rem;">Longwood offers itself to a small number of weddings, private stays, and corporate retreats each year — always by arrangement, always exclusively yours.</p>
+        <div class="stat-grid">
+          <div class="stat"><div class="stat-n">8+</div><div class="stat-l">Ensuite bedrooms</div></div>
+          <div class="stat"><div class="stat-n">Cat. 1</div><div class="stat-l">Heritage NZ listing</div></div>
+          <div class="stat"><div class="stat-n">1921</div><div class="stat-l">Lutyens-inspired design</div></div>
+          <div class="stat"><div class="stat-n">75 min</div><div class="stat-l">From Wellington CBD</div></div>
+        </div>
+      </div>
+      <div style="background:#141410;border:0.5px solid rgba(200,185,139,0.15);">
+        <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+          <rect width="420" height="300" fill="#141210"/>
+          <rect width="420" height="300" fill="#141210"/>
+          <rect x="0" y="180" width="420" height="120" fill="#181614"/>
+          <rect x="0" y="178" width="420" height="3" fill="#c8b98b" opacity="0.25"/>
+          <circle cx="210" cy="35" r="22" fill="none" stroke="#c8b98b" stroke-width="0.3" opacity="0.25"/>
+          <circle cx="210" cy="35" r="13" fill="none" stroke="#c8b98b" stroke-width="0.3" opacity="0.18"/>
+          <line x1="210" y1="57" x2="210" y2="90" stroke="#c8b98b" stroke-width="0.4" opacity="0.35"/>
+          <ellipse cx="210" cy="96" rx="20" ry="7" fill="none" stroke="#c8b98b" stroke-width="0.4" opacity="0.35"/>
+          <circle cx="190" cy="93" r="2" fill="#c8b98b" opacity="0.25"/>
+          <circle cx="210" cy="89" r="2" fill="#c8b98b" opacity="0.25"/>
+          <circle cx="230" cy="93" r="2" fill="#c8b98b" opacity="0.25"/>
+          <ellipse cx="210" cy="230" rx="115" ry="20" fill="#1e1c18" stroke="#2a2820" stroke-width="0.5"/>
+          <rect x="178" y="192" width="2" height="28" fill="#504438"/>
+          <circle cx="179" cy="192" r="2" fill="#c8b98b" opacity="0.45"/>
+          <rect x="248" y="186" width="2" height="32" fill="#504438"/>
+          <circle cx="249" cy="186" r="2" fill="#c8b98b" opacity="0.45"/>
+          <rect x="196" y="208" width="1" height="14" fill="#c8b98b" opacity="0.2"/>
+          <ellipse cx="197" cy="206" rx="6" ry="2.5" fill="none" stroke="#c8b98b" stroke-width="0.4" opacity="0.2"/>
+          <rect x="220" y="208" width="1" height="14" fill="#c8b98b" opacity="0.2"/>
+          <ellipse cx="221" cy="206" rx="6" ry="2.5" fill="none" stroke="#c8b98b" stroke-width="0.4" opacity="0.2"/>
+          <rect x="300" y="115" width="88" height="78" fill="#0e0e0b" stroke="#c8b98b" stroke-width="0.3" opacity="0.35"/>
+          <rect x="312" y="127" width="65" height="55" fill="#0a0a08"/>
+          <ellipse cx="344" cy="180" rx="14" ry="4.5" fill="#c8b98b" opacity="0.08"/>
+          <path d="M336,180 Q341,159 344,168 Q347,156 352,180" fill="#c8b98b" opacity="0.12"/>
+          <rect x="293" y="112" width="104" height="7" fill="#252320" stroke="#c8b98b" stroke-width="0.3" opacity="0.3"/>
+          <rect x="22" y="104" width="78" height="90" fill="#0a0c10" stroke="#c8b98b" stroke-width="0.3" opacity="0.45"/>
+          <line x1="61" y1="104" x2="61" y2="194" stroke="#c8b98b" stroke-width="0.3" opacity="0.25"/>
+          <line x1="22" y1="149" x2="100" y2="149" stroke="#c8b98b" stroke-width="0.3" opacity="0.25"/>
+          <rect x="14" y="95" width="16" height="108" fill="#1e1c18" opacity="0.8"/>
+          <rect x="100" y="95" width="16" height="108" fill="#1e1c18" opacity="0.8"/>
+          <rect x="22.5" y="104.5" width="38" height="44" fill="#c8b98b" opacity="0.025"/>
+          <rect x="0" y="64" width="10" height="120" fill="#181614"/>
+          <rect x="410" y="64" width="10" height="120" fill="#181614"/>
+        </svg>
+        <div style="padding:1.2rem 1.5rem;border-top:0.5px solid rgba(200,185,139,0.15);">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:400;color:#e8e2d8;">The Dining Room</div>
+          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#504848;margin-top:0.2rem;">Ornate ceilings · Adam fireplaces · Seats 20</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- OFFERINGS -->
+  <section class="section-dark">
+    <p class="eyebrow">How we welcome you</p>
+    <h2 class="serif h2" style="margin-bottom:2.5rem;max-width:500px;">The estate, exclusively yours</h2>
+    <div class="grid3">
+      <div class="offering-card">
+        <h3 class="serif" style="font-size:22px;color:#e8e2d8;margin-bottom:0.8rem;">Weddings</h3>
+        <p class="body-text" style="font-size:13px;">Twelve weddings per year, each one the sole occasion on the estate. Ceremony lawns, ornate reception rooms, and two nights of the whole house.</p>
+        <div class="card-link" onclick="showPage('weddings')" style="cursor:pointer;">Enquire about your day →</div>
+      </div>
+      <div class="offering-card">
+        <h3 class="serif" style="font-size:22px;color:#e8e2d8;margin-bottom:0.8rem;">Corporate Retreats</h3>
+        <p class="body-text" style="font-size:13px;">Trade the boardroom for a panelled country house. Strategy days, board meetings, and leadership retreats at a different pace entirely.</p>
+        <div class="card-link" onclick="scrollToEnquire()" style="cursor:pointer;">Plan a retreat →</div>
+      </div>
+      <div class="offering-card">
+        <h3 class="serif" style="font-size:22px;color:#e8e2d8;margin-bottom:0.8rem;">Private Stays</h3>
+        <p class="body-text" style="font-size:13px;">Take the whole house as your own. Eight ensuite bedrooms, open fires, the library, and the full grounds — from a long weekend to a week.</p>
+        <div class="card-link" onclick="showPage('stay')" style="cursor:pointer;">View rooms →</div>
+      </div>
+      <div class="offering-card">
+        <h3 class="serif" style="font-size:22px;color:#e8e2d8;margin-bottom:0.8rem;">Signature Events</h3>
+        <p class="body-text" style="font-size:13px;">Eight curated evenings per year — harvest table dinners, literary salons, garden parties, and wine masterclasses. Open to a private guest list.</p>
+        <div class="card-link" onclick="showPage('events')" style="cursor:pointer;">View the calendar →</div>
+      </div>
+      <div class="offering-card">
+        <h3 class="serif" style="font-size:22px;color:#e8e2d8;margin-bottom:0.8rem;">Film &amp; Brand</h3>
+        <p class="body-text" style="font-size:13px;">As seen in Apple TV+'s Time Bandits. Heritage interiors and park grounds available to select productions and premium brand partners.</p>
+        <div class="card-link" onclick="scrollToEnquire()" style="cursor:pointer;">Location enquiries →</div>
+      </div>
+      <div class="offering-card">
+        <h3 class="serif" style="font-size:22px;color:#e8e2d8;margin-bottom:0.8rem;">Brewery &amp; Mini Golf</h3>
+        <p class="body-text" style="font-size:13px;">The historic stables house a craft taproom. A nine-hole heritage golf course winds through the outer grounds — open weekends for all.</p>
+        <div class="card-link" onclick="scrollToEnquire()" style="cursor:pointer;">Plan a visit →</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROUNDS -->
+  <div class="grounds-split">
+    <div style="background:#0e0e0b;overflow:hidden;">
+      <svg viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+        <rect width="420" height="340" fill="#0e0e0b"/>
+        <rect width="420" height="340" fill="#111008"/>
+        <rect x="90" y="68" width="240" height="204" fill="#131208" stroke="#c8b98b" stroke-width="0.3" opacity="0.35"/>
+        <rect x="122" y="100" width="176" height="140" fill="#0e0d0a" stroke="#c8b98b" stroke-width="0.4" opacity="0.45"/>
+        <rect x="90" y="162" width="240" height="14" fill="#1a1814" opacity="0.8"/>
+        <rect x="202" y="68" width="14" height="204" fill="#1a1814" opacity="0.8"/>
+        <circle cx="209" cy="170" r="26" fill="#0a0a08" stroke="#c8b98b" stroke-width="0.5" opacity="0.45"/>
+        <circle cx="209" cy="170" r="16" fill="none" stroke="#c8b98b" stroke-width="0.3" opacity="0.3"/>
+        <circle cx="209" cy="170" r="7" fill="#c8b98b" opacity="0.07"/>
+        <rect x="127" y="105" width="72" height="57" fill="#131108" stroke="#c8b98b" stroke-width="0.2" opacity="0.25"/>
+        <rect x="219" y="105" width="72" height="57" fill="#131108" stroke="#c8b98b" stroke-width="0.2" opacity="0.25"/>
+        <rect x="127" y="177" width="72" height="57" fill="#131108" stroke="#c8b98b" stroke-width="0.2" opacity="0.25"/>
+        <rect x="219" y="177" width="72" height="57" fill="#131108" stroke="#c8b98b" stroke-width="0.2" opacity="0.25"/>
+        <circle cx="100" cy="80" r="14" fill="#1a1814" opacity="0.9"/>
+        <circle cx="320" cy="78" r="16" fill="#181612" opacity="0.9"/>
+        <circle cx="98" cy="260" r="12" fill="#1a1814" opacity="0.8"/>
+        <circle cx="322" cy="262" r="14" fill="#181612" opacity="0.8"/>
+        <rect x="320" y="158" width="68" height="34" rx="4" fill="#0e1014" stroke="#c8b98b" stroke-width="0.3" opacity="0.35"/>
+        <rect x="24" y="148" width="56" height="44" fill="#111210" stroke="#c8b98b" stroke-width="0.2" opacity="0.28"/>
+        <line x1="52" y1="148" x2="52" y2="192" stroke="#c8b98b" stroke-width="0.2" opacity="0.25"/>
+      </svg>
+    </div>
+    <div class="grounds-text">
+      <p class="eyebrow">The Grounds</p>
+      <h2 class="serif h2">Vast lawns, venerable trees</h2>
+      <p class="body-text" style="margin-top:1rem;">The estate's park-like grounds have been a century in the making — ancient English oaks, a Sunken Garden, a reflecting pool, and the quiet drama of Napoleon's own oak, grown from a cutting of the original.</p>
+      <ul class="dotlist" style="margin-top:1.5rem;">
+        <li><span class="dot"></span>Sunken garden &amp; formal terraces</li>
+        <li><span class="dot"></span>Tennis court &amp; croquet lawn</li>
+        <li><span class="dot"></span>Swimming pool &amp; poolhouse</li>
+        <li><span class="dot"></span>Historic stables &amp; courtyard taproom</li>
+        <li><span class="dot"></span>Napoleon's Oak — grown from St Helena</li>
+        <li><span class="dot"></span>Nine-hole heritage golf course</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CINEMATIC -->
+  <section class="cinematic">
+    <div>
+      <div class="cinematic-badge">Cinematic legacy</div>
+      <h2 class="serif h2" style="color:#f0e8d8;">As seen on Apple TV+</h2>
+      <p class="body-text" style="margin-top:1rem;">Longwood was selected as a principal location for Taika Waititi's Time Bandits. Its heritage interiors and grounds are available to select film and television productions by arrangement.</p>
+      <div class="quote">"A home with a century of stories written into its walls."</div>
+      <div class="quote-attr">— From the estate archives</div>
+    </div>
+    <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;border:0.5px solid rgba(200,185,139,0.15);">
+      <rect width="480" height="320" fill="#0e0e0b"/>
+      <polygon points="0,320 240,205 480,320" fill="#141210" opacity="0.8"/>
+      <rect x="0" y="0" width="216" height="320" fill="#141210"/>
+      <rect x="264" y="0" width="216" height="320" fill="#141210"/>
+      <polygon points="0,320 0,182 90,225 90,320" fill="#181614"/>
+      <rect x="0" y="176" width="102" height="7" fill="#252320"/>
+      <rect x="0" y="192" width="88" height="7" fill="#222018"/>
+      <rect x="0" y="208" width="74" height="7" fill="#201e18"/>
+      <rect x="0" y="224" width="60" height="7" fill="#1e1c16"/>
+      <path d="M0,176 Q50,182 100,225" fill="none" stroke="#c8b98b" stroke-width="0.8" opacity="0.35"/>
+      <rect x="0" y="0" width="480" height="44" fill="#181614"/>
+      <rect x="35" y="40" width="410" height="4" fill="#c8b98b" opacity="0.07"/>
+      <circle cx="240" cy="24" r="18" fill="none" stroke="#c8b98b" stroke-width="0.3" opacity="0.22"/>
+      <circle cx="240" cy="24" r="11" fill="none" stroke="#c8b98b" stroke-width="0.3" opacity="0.16"/>
+      <line x1="240" y1="42" x2="240" y2="90" stroke="#c8b98b" stroke-width="0.5" opacity="0.35"/>
+      <circle cx="240" cy="94" r="7" fill="none" stroke="#c8b98b" stroke-width="0.5" opacity="0.28"/>
+      <circle cx="240" cy="94" r="3" fill="#c8b98b" opacity="0.12"/>
+      <rect x="195" y="115" width="90" height="180" fill="#090908"/>
+      <path d="M195,115 Q240,86 285,115" fill="none" stroke="#c8b98b" stroke-width="0.5" opacity="0.35"/>
+      <rect x="195.5" y="115.5" width="45" height="179" fill="#c8b98b" opacity="0.015"/>
+      <polygon points="195,115 148,320 338,320 285,115" fill="#c8b98b" opacity="0.012"/>
+      <rect x="28" y="80" width="52" height="70" fill="none" stroke="#c8b98b" stroke-width="0.4" opacity="0.3"/>
+      <rect x="30" y="82" width="48" height="66" fill="#0a0a08"/>
+      <ellipse cx="54" cy="108" rx="9" ry="11" fill="#1a1814" opacity="0.45"/>
+      <rect x="46" y="119" width="17" height="17" fill="#181614" opacity="0.38"/>
+      <rect x="0" y="238" width="216" height="3" fill="#c8b98b" opacity="0.12"/>
+      <rect x="264" y="238" width="216" height="3" fill="#c8b98b" opacity="0.12"/>
+    </svg>
+  </section>
+
+  <!-- EVENTS PREVIEW -->
+  <section class="section-dark">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;">
+      <div><p class="eyebrow">Signature events</p><h2 class="serif h2">Coming to Longwood</h2></div>
+      <button class="btn-ghost" onclick="showPage('events')" style="font-size:10px;padding:10px 20px;">Full calendar →</button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(200,185,139,0.1);">
+      <div class="event-card">
+        <div class="event-date">Saturday 14 March 2027</div>
+        <h3 class="serif" style="font-size:20px;color:#e8e2d8;">The Harvest Table</h3>
+        <p class="body-text" style="font-size:13px;margin-top:0.5rem;">A long-table dinner in the sunken garden — winemakers, guest chef, and the first light of autumn. 60 guests.</p>
+        <div class="event-price">$350 per person</div>
+      </div>
+      <div class="event-card">
+        <div class="event-date">Friday 18 April 2027</div>
+        <h3 class="serif" style="font-size:20px;color:#e8e2d8;">Napoleon's Library</h3>
+        <p class="body-text" style="font-size:13px;margin-top:0.5rem;">An intimate literary salon — celebrated author, fine whisky, formal dinner for thirty in the estate's library.</p>
+        <div class="event-price">$280 per person</div>
+      </div>
+      <div class="event-card">
+        <div class="event-date">Saturday 21 June 2027</div>
+        <h3 class="serif" style="font-size:20px;color:#e8e2d8;">Midsummer Night</h3>
+        <p class="body-text" style="font-size:13px;margin-top:0.5rem;">Theatrical garden party — lanterns, live music, Champagne sabrage, and supper on the lawn for 80 guests.</p>
+        <div class="event-price">$295 per person</div>
+      </div>
+      <div class="event-card">
+        <div class="event-date">Sunday 3 August 2027</div>
+        <h3 class="serif" style="font-size:20px;color:#e8e2d8;">Vineyard &amp; Vault</h3>
+        <p class="body-text" style="font-size:13px;margin-top:0.5rem;">Martinborough Pinot masterclass guided by a Master of Wine. Rare charcuterie. 40 guests in the Adam Room.</p>
+        <div class="event-price">$220 per person</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGION -->
+  <section class="section" style="display:grid;grid-template-columns:2fr 1fr;gap:5rem;align-items:start;">
+    <div>
+      <p class="eyebrow">The Region</p>
+      <h2 class="serif h2">Heart of the South Wairarapa</h2>
+      <p class="body-text" style="margin-top:1rem;">World-class Pinot Noir, artisan food producers, wild coastline, and extraordinary landscapes — all within reach of the estate.</p>
+      <div style="margin-top:2rem;">
+        <div class="proximity-item"><span class="proximity-time">75</span><span class="proximity-label">minutes from Wellington CBD via Remutaka</span></div>
+        <div class="proximity-item"><span class="proximity-time">15</span><span class="proximity-label">minutes to Martinborough — 20+ boutique wineries</span></div>
+        <div class="proximity-item"><span class="proximity-time">8</span><span class="proximity-label">minutes to Greytown — boutique shops &amp; dining</span></div>
+        <div class="proximity-item"><span class="proximity-time">5</span><span class="proximity-label">minutes to companion estate, Fernside Gardens</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="partner-box">
+        <div class="partner-label">Companion Manor</div>
+        <div class="serif" style="font-size:22px;color:#e8e2d8;margin-bottom:0.5rem;">Fernside Gardens</div>
+        <p class="body-text" style="font-size:12px;">A twelve-acre Arts and Crafts estate five minutes away — Lord of the Rings filming location, guided garden walks, and heritage accommodation from November 2026.</p>
+        <a href="https://fernside.garden" target="_blank" style="display:inline-block;margin-top:1.2rem;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#c8b98b;font-weight:400;text-decoration:none;border:0.5px solid rgba(200,185,139,0.4);padding:9px 16px;">Explore Fernside →</a>
+      </div>
+      <div class="partner-box">
+        <div class="partner-label">On the estate</div>
+        <div class="serif" style="font-size:22px;color:#e8e2d8;margin-bottom:0.5rem;">The Stables Taproom</div>
+        <p class="body-text" style="font-size:12px;">Craft brewery in the historic stables courtyard — open weekends. Estate-brewed ale and a nine-hole heritage golf course through the outer grounds.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRE -->
+  <section class="enquire" id="enquire">
+    <div>
+      <p style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#3a3328;margin-bottom:1.5rem;font-weight:500;">Plan your visit</p>
+      <h2 class="enquire-title">We would love to hear from you</h2>
+      <p style="font-size:14px;color:#3a3228;font-weight:300;line-height:1.8;margin-top:1rem;">Longwood welcomes enquiries for weddings, private stays, corporate retreats, events, and film. All visits are by appointment.</p>
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:0.5px solid rgba(26,26,23,0.2);">
+        <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#504838;margin-bottom:0.4rem;">Address</div>
+        <div style="font-size:13px;color:#2a2318;font-weight:300;line-height:1.6;">78 Longwood Road East, Featherston<br>South Wairarapa, New Zealand</div>
+        <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#504838;margin-top:1rem;margin-bottom:0.4rem;">Contact</div>
+        <div style="font-size:13px;color:#2a2318;font-weight:300;">longwood.nz@gmail.com</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0.6rem;">
+      <input class="enquire-input" type="text" placeholder="Your name"/>
+      <input class="enquire-input" type="email" placeholder="Email address"/>
+      <select class="enquire-select">
+        <option value="">I'm enquiring about…</option>
+        <option>A wedding or celebration</option>
+        <option>A corporate retreat</option>
+        <option>A private stay</option>
+        <option>A signature event</option>
+        <option>Film or brand partnership</option>
+        <option>Something else</option>
+      </select>
+      <input class="enquire-input" type="text" placeholder="Preferred dates (if known)"/>
+      <textarea class="enquire-textarea" rows="4" placeholder="Tell us more about your plans…"></textarea>
+      <button class="btn-dark">Send enquiry</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Longwood</div>
+        <div class="footer-tagline">A heritage country house in the South Wairarapa — weddings, retreats, private stays, and curated events. By arrangement.</div>
+        <div class="heritage-badge"><span>Heritage NZ</span><span style="opacity:0.4">|</span><span>Category 1</span></div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">The Estate</div>
+        <ul>
+          <li><a href="#" onclick="showPage('home');return false;">The House</a></li>
+          <li><a href="#" onclick="showPage('home');return false;">The Grounds</a></li>
+          <li><a href="#" onclick="showPage('home');return false;">History</a></li>
+          <li><a href="#" onclick="showPage('home');return false;">Film &amp; Media</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Visit</div>
+        <ul>
+          <li><a href="#" onclick="showPage('weddings');return false;">Weddings</a></li>
+          <li><a href="#" onclick="scrollToEnquire();return false;">Corporate Retreats</a></li>
+          <li><a href="#" onclick="showPage('stay');return false;">Private Stays</a></li>
+          <li><a href="#" onclick="showPage('events');return false;">Events</a></li>
+          <li><a href="https://fernside.garden" target="_blank">Fernside Gardens</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Longwood Estate · Featherston, South Wairarapa</span>
+      <span>Wairarapa · New Zealand · Est. 1850</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══ WEDDINGS PAGE ═══ -->
+<div class="page" id="page-weddings">
+  <div class="tab-bar">
+    <button class="tab-btn active">Weddings &amp; Celebrations</button>
+    <button class="tab-btn" onclick="showPage('home')">← Back to Estate</button>
+  </div>
+  <section class="section-black" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;">
+    <div>
+      <p class="eyebrow">Weddings &amp; Celebrations</p>
+      <h1 class="serif h1">A day<br><em style="font-style:italic;color:#c8b98b;">entirely</em><br>your own</h1>
+      <p class="body-text" style="margin-top:1.5rem;max-width:400px;">Longwood opens its gates to twelve weddings a year. Each one is the sole event on the estate — no other guests, no shared spaces, no compromise.</p>
+      <div class="btn-pair" style="margin-top:2rem;">
+        <button class="btn-gold" onclick="document.getElementById('wedding-enquire').scrollIntoView({behavior:'smooth'})">Start your enquiry</button>
+        <button class="btn-ghost" onclick="document.getElementById('wedding-packages').scrollIntoView({behavior:'smooth'})">View packages</button>
+      </div>
+    </div>
+    <svg viewBox="0 0 400 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;border:0.5px solid rgba(200,185,139,0.15);">
+      <rect width="400" height="290" fill="#0a0a08"/>
+      <rect x="0" y="200" width="400" height="90" fill="#0e0c0a"/>
+      <ellipse cx="200" cy="198" rx="178" ry="14" fill="#141210" opacity="0.7"/>
+      <rect x="110" y="88" width="180" height="134" fill="#141210" stroke="#2a2820" stroke-width="0.4"/>
+      <polygon points="97,88 200,44 303,88" fill="#121008" stroke="#2a2820" stroke-width="0.4"/>
+      <rect x="167" y="132" width="66" height="90" fill="#080808" stroke="#c8b98b" stroke-width="0.3" opacity="0.7"/>
+      <path d="M167,132 Q200,116 233,132" fill="none" stroke="#c8b98b" stroke-width="0.3" opacity="0.5"/>
+      <rect x="167.5" y="132.5" width="33" height="89" fill="#c8b98b" opacity="0.03"/>
+      <rect x="124" y="122" width="34" height="58" fill="#080808" stroke="#c8b98b" stroke-width="0.25" opacity="0.6"/>
+      <line x1="141" y1="122" x2="141" y2="180" stroke="#c8b98b" stroke-width="0.25" opacity="0.3"/>
+      <line x1="124" y1="151" x2="158" y2="151" stroke="#c8b98b" stroke-width="0.25" opacity="0.3"/>
+      <rect x="242" y="122" width="34" height="58" fill="#080808" stroke="#c8b98b" stroke-width="0.25" opacity="0.6"/>
+      <line x1="259" y1="122" x2="259" y2="180" stroke="#c8b98b" stroke-width="0.25" opacity="0.3"/>
+      <line x1="242" y1="151" x2="276" y2="151" stroke="#c8b98b" stroke-width="0.25" opacity="0.3"/>
+      <rect x="167" y="218" width="66" height="5" fill="#252320"/>
+      <rect x="172" y="223" width="56" height="4" fill="#201e1c"/>
+      <circle cx="34" cy="100" r="24" fill="#141008" opacity="0.9"/>
+      <rect x="26" y="124" width="9" height="88" fill="#141008"/>
+      <circle cx="366" cy="94" r="28" fill="#141008" opacity="0.9"/>
+      <rect x="358" y="122" width="11" height="100" fill="#141008"/>
+      <ellipse cx="200" cy="250" rx="32" ry="6" fill="#c8b98b" opacity="0.06"/>
+      <circle cx="200" cy="60" r="2" fill="#c8b98b" opacity="0.3"/>
+      <circle cx="130" cy="32" r="1" fill="#c8b98b" opacity="0.22"/>
+      <circle cx="290" cy="28" r="1" fill="#c8b98b" opacity="0.2"/>
+    </svg>
+  </section>
+
+  <section class="section-dark" id="wedding-packages">
+    <p class="eyebrow">Three ways to celebrate</p>
+    <h2 class="serif h2" style="margin-bottom:2.5rem;">Choose your occasion</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      <div class="pkg-card">
+        <div class="pill">Garden ceremony</div>
+        <h3 class="h3">The Lawn</h3>
+        <div class="pkg-from">From</div>
+        <div class="pkg-price">$6,000</div>
+        <p class="body-text" style="margin-top:1rem;font-size:13px;">Ceremony on the grounds, sunken garden, croquet lawn, and loggia. Grounds use only.</p>
+        <ul class="dotlist" style="margin-top:1rem;">
+          <li><span class="dot"></span>Full grounds exclusive use</li>
+          <li><span class="dot"></span>Up to 150 guests</li>
+          <li><span class="dot"></span>Marquee permitted</li>
+          <li><span class="dot"></span>6 hours</li>
+        </ul>
+      </div>
+      <div class="pkg-card featured">
+        <div class="pill" style="border-color:#c8b98b;background:rgba(200,185,139,0.08);">Most requested</div>
+        <h3 class="h3">The Estate</h3>
+        <div class="pkg-from">From</div>
+        <div class="pkg-price">$14,000</div>
+        <p class="body-text" style="margin-top:1rem;font-size:13px;">Exclusive use of house and grounds across two nights. All 8+ bedrooms for your closest guests.</p>
+        <ul class="dotlist" style="margin-top:1rem;">
+          <li><span class="dot"></span>All 8+ bedrooms, 2 nights</li>
+          <li><span class="dot"></span>Full estate exclusive</li>
+          <li><span class="dot"></span>Private chef optional</li>
+          <li><span class="dot"></span>Up to 150 ceremony guests</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <div class="pill">Intimate</div>
+        <h3 class="h3">The Elopement</h3>
+        <div class="pkg-from">From</div>
+        <div class="pkg-price">$4,500</div>
+        <p class="body-text" style="margin-top:1rem;font-size:13px;">A deeply private occasion — ceremony, one night in the house, and a formal dinner for up to twenty.</p>
+        <ul class="dotlist" style="margin-top:1rem;">
+          <li><span class="dot"></span>Up to 20 guests</li>
+          <li><span class="dot"></span>One night, full house</li>
+          <li><span class="dot"></span>Dinner included</li>
+          <li><span class="dot"></span>Martinborough welcome hamper</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;" id="wedding-enquire">
+    <div>
+      <p class="eyebrow">The experience</p>
+      <h2 class="serif h2" style="margin-bottom:1.2rem;">Old-world grace, entirely yours</h2>
+      <p class="body-text">We work with a curated panel of preferred caterers, florists, and photographers who understand the estate's aesthetic and heritage.</p>
+      <ul class="dotlist" style="margin-top:1.5rem;">
+        <li><span class="dot"></span>Ceremony lawns beneath century-old oaks</li>
+        <li><span class="dot"></span>Dining room seats 20; marquee for 150+</li>
+        <li><span class="dot"></span>Adam fireplaces, ornate ceilings, grand staircase</li>
+        <li><span class="dot"></span>Sunken garden for pre-dinner drinks</li>
+        <li><span class="dot"></span>Tennis, croquet, and boules for guests</li>
+        <li><span class="dot"></span>Martinborough wine &amp; Wairarapa food curated</li>
+        <li><span class="dot"></span>Fire pits and evening pool access</li>
+      </ul>
+      <div class="stat-grid">
+        <div class="stat"><div class="stat-n">12</div><div class="stat-l">Weddings per year</div></div>
+        <div class="stat"><div class="stat-n">150+</div><div class="stat-l">Ceremony capacity</div></div>
+        <div class="stat"><div class="stat-n">2</div><div class="stat-l">Night minimum</div></div>
+        <div class="stat"><div class="stat-n">Cat. 1</div><div class="stat-l">Heritage listing</div></div>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow">Enquire about your day</p>
+      <p class="body-text" style="margin-bottom:1.5rem;">Tell us a little about what you're envisioning and we'll be in touch within two business days.</p>
+      <div style="display:flex;flex-direction:column;gap:0.6rem;">
+        <input class="lw-input" type="text" placeholder="Your names"/>
+        <input class="lw-input" type="email" placeholder="Email address"/>
+        <input class="lw-input" type="text" placeholder="Proposed date or season"/>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;">
+          <select class="lw-select"><option value="">Guest count</option><option>Under 30</option><option>30–60</option><option>60–100</option><option>100–150</option></select>
+          <select class="lw-select"><option value="">Package</option><option>The Lawn</option><option>The Estate</option><option>The Elopement</option><option>Not sure yet</option></select>
+        </div>
+        <textarea class="lw-textarea" rows="3" placeholder="Tell us about your vision…"></textarea>
+        <button class="btn-gold" style="align-self:flex-start;">Send enquiry</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ STAY PAGE ═══ -->
+<div class="page" id="page-stay">
+  <div class="tab-bar">
+    <button class="tab-btn active">Private Stays</button>
+    <button class="tab-btn" onclick="showPage('home')">← Back to Estate</button>
+  </div>
+  <section class="section-black">
+    <div class="grid2" style="align-items:end;">
+      <div>
+        <p class="eyebrow">Private stays</p>
+        <h1 class="serif h1">The house<br>as your own</h1>
+        <p class="body-text" style="margin-top:1.5rem;max-width:480px;">Longwood is not a hotel. When you stay here, you take the whole house — eight ensuite bedrooms, open fires in every room, the dining room, the library, the loggia, and the full estate grounds.</p>
+      </div>
+      <div style="border:0.5px solid rgba(200,185,139,0.2);padding:1.5rem;background:#141410;">
+        <p class="eyebrow" style="margin-bottom:0.8rem;">Check availability</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <input class="lw-input" type="text" placeholder="Arrival date"/>
+          <input class="lw-input" type="text" placeholder="Departure date"/>
+          <select class="lw-select"><option value="">Number of guests</option><option>2–4</option><option>5–8</option><option>9–12</option><option>13–16</option></select>
+          <button class="btn-gold" style="width:100%;margin-top:0.3rem;">Check availability</button>
+        </div>
+        <p style="font-size:11px;color:#504848;margin-top:1rem;line-height:1.6;">Minimum 2 nights. Whole-house bookings only.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <p class="eyebrow">The rooms</p>
+    <h2 class="serif h2" style="margin-bottom:0.5rem;">Eight ensuite bedrooms</h2>
+    <p class="body-text" style="margin-bottom:2.5rem;">Four principal rooms with canopied beds, antique furnishings, and open fires. Four further rooms for larger groups.</p>
+    <div style="display:flex;flex-direction:column;gap:1px;background:rgba(200,185,139,0.1);">
+      <div class="room-card">
+        <div style="background:#0c0c0a;">
+          <svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+            <rect width="260" height="180" fill="#0c0c0a"/>
+            <rect x="0" y="126" width="260" height="54" fill="#141210"/>
+            <rect x="34" y="24" width="192" height="112" fill="#141210" opacity="0.5"/>
+            <rect x="58" y="34" width="144" height="78" fill="#181614"/>
+            <rect x="46" y="32" width="168" height="7" fill="#252320"/>
+            <line x1="58" y1="41" x2="58" y2="112" stroke="#c8b98b" stroke-width="0.4" opacity="0.28"/>
+            <line x1="202" y1="41" x2="202" y2="112" stroke="#c8b98b" stroke-width="0.4" opacity="0.28"/>
+            <rect x="58" y="32" width="2.5" height="90" fill="#252320"/>
+            <rect x="200" y="32" width="2.5" height="90" fill="#252320"/>
+            <rect x="94" y="80" width="72" height="34" fill="#0e0c0a"/>
+            <rect x="94" y="114" width="72" height="14" fill="#1e1c18"/>
+            <circle cx="118" cy="20" r="11" fill="none" stroke="#c8b98b" stroke-width="0.3" opacity="0.2"/>
+            <line x1="118" y1="31" x2="118" y2="62" stroke="#c8b98b" stroke-width="0.4" opacity="0.22"/>
+            <circle cx="118" cy="64" r="5" fill="none" stroke="#c8b98b" stroke-width="0.4" opacity="0.28"/>
+            <rect x="12" y="92" width="30" height="40" fill="#141210" stroke="#c8b98b" stroke-width="0.2" opacity="0.28"/>
+            <rect x="218" y="92" width="30" height="40" fill="#141210" stroke="#c8b98b" stroke-width="0.2" opacity="0.28"/>
+          </svg>
+        </div>
+        <div class="room-info">
+          <div class="pill">Principal room</div>
+          <h3 class="h3">The Blue Room</h3>
+          <p class="body-text" style="margin-top:0.7rem;font-size:13px;">The grandest of the principal bedrooms — a canopied king bed, open fireplace, antique writing desk, and tall sash windows looking out over the front lawn.</p>
+          <ul class="dotlist" style="margin-top:1rem;">
+            <li><span class="dot"></span>Canopied king bed</li>
+            <li><span class="dot"></span>Open fireplace</li>
+            <li><span class="dot"></span>Deep soaking bath &amp; walk-in shower</li>
+            <li><span class="dot"></span>Garden views</li>
+          </ul>
+        </div>
+      </div>
+      <div class="room-card">
+        <div style="background:#0a0c0a;">
+          <svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+            <rect width="260" height="180" fill="#0a0c0a"/>
+            <rect x="0" y="120" width="260" height="60" fill="#12140e"/>
+            <rect x="22" y="16" width="94" height="108" fill="#0e0e0a"/>
+            <line x1="22" y1="16" x2="22" y2="124" stroke="#c8b98b" stroke-width="0.3" opacity="0.18"/>
+            <line x1="116" y1="16" x2="116" y2="124" stroke="#c8b98b" stroke-width="0.3" opacity="0.18"/>
+            <line x1="22" y1="70" x2="116" y2="70" stroke="#c8b98b" stroke-width="0.3" opacity="0.18"/>
+            <rect x="26" y="19" width="42" height="50" fill="#c8b98b" opacity="0.025"/>
+            <rect x="126" y="34" width="108" height="74" fill="#181612"/>
+            <rect x="126" y="108" width="108" height="18" fill="#1e1c18"/>
+            <rect x="116" y="32" width="128" height="6" fill="#252320"/>
+            <rect x="170" y="22" width="2" height="14" fill="#c8b98b" opacity="0.18"/>
+            <circle cx="171" cy="20" r="4" fill="#c8b98b" opacity="0.12"/>
+          </svg>
+        </div>
+        <div class="room-info">
+          <div class="pill">Principal room</div>
+          <h3 class="h3">The Library Room</h3>
+          <p class="body-text" style="margin-top:0.7rem;font-size:13px;">Adjacent to the estate's library, with south-facing garden views, a queen bed, and access to the first-floor loggia.</p>
+          <ul class="dotlist" style="margin-top:1rem;">
+            <li><span class="dot"></span>Queen bed, antique headboard</li>
+            <li><span class="dot"></span>Loggia access</li>
+            <li><span class="dot"></span>Ensuite with cast-iron bath</li>
+            <li><span class="dot"></span>South garden views</li>
+          </ul>
+        </div>
+      </div>
+      <div class="room-card">
+        <div style="background:#0c0a0c;">
+          <svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+            <rect width="260" height="180" fill="#0c0a0c"/>
+            <rect x="0" y="130" width="260" height="50" fill="#141214"/>
+            <rect x="70" y="28" width="120" height="104" fill="#181416"/>
+            <rect x="65" y="26" width="130" height="6" fill="#252022"/>
+            <line x1="70" y1="34" x2="70" y2="132" stroke="#c8b98b" stroke-width="0.3" opacity="0.18"/>
+            <line x1="190" y1="34" x2="190" y2="132" stroke="#c8b98b" stroke-width="0.3" opacity="0.18"/>
+            <rect x="75" y="34" width="108" height="58" fill="#0e0c0e"/>
+            <line x1="129" y1="34" x2="129" y2="92" stroke="#c8b98b" stroke-width="0.3" opacity="0.22"/>
+            <line x1="75" y1="63" x2="183" y2="63" stroke="#c8b98b" stroke-width="0.3" opacity="0.22"/>
+            <rect x="75" y="34" width="53" height="28" fill="#c8b98b" opacity="0.025"/>
+            <rect x="88" y="98" width="84" height="28" fill="#1e1c1e"/>
+            <rect x="88" y="126" width="84" height="9" fill="#252024"/>
+            <rect x="12" y="58" width="46" height="70" fill="#0e0c0e" stroke="#c8b98b" stroke-width="0.2" opacity="0.28"/>
+            <line x1="35" y1="58" x2="35" y2="128" stroke="#c8b98b" stroke-width="0.2" opacity="0.2"/>
+            <rect x="202" y="46" width="46" height="80" fill="#0e0c0e" stroke="#c8b98b" stroke-width="0.2" opacity="0.22"/>
+          </svg>
+        </div>
+        <div class="room-info">
+          <div class="pill">Principal room</div>
+          <h3 class="h3">The Adam Room</h3>
+          <p class="body-text" style="margin-top:0.7rem;font-size:13px;">Named for its ornate Adam ceiling plasterwork. A corner room with dual aspects — morning east light, afternoon south — with a king bed and sitting area.</p>
+          <ul class="dotlist" style="margin-top:1rem;">
+            <li><span class="dot"></span>King bed with sitting area</li>
+            <li><span class="dot"></span>Ornate Adam plasterwork ceiling</li>
+            <li><span class="dot"></span>Dual-aspect windows</li>
+            <li><span class="dot"></span>Ensuite with period fittings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:#504848;margin-top:1.2rem;font-weight:300;">+ Five additional bedrooms for larger groups. Full descriptions on enquiry.</p>
+  </section>
+
+  <section class="section" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;">
+    <div>
+      <p class="eyebrow">Stay packages</p>
+      <h2 class="serif h2" style="margin-bottom:1.5rem;">Choose your duration</h2>
+      <div style="display:flex;flex-direction:column;gap:1px;background:rgba(200,185,139,0.1);">
+        <div class="pkg-row"><div><div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#504848;margin-bottom:0.4rem;">Weekend escape</div><div class="h3">Fri – Sun</div><p class="body-text" style="margin-top:0.5rem;font-size:12px;">Two nights, full house, all grounds.</p></div><div style="text-align:right;"><div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#504848;">From</div><div class="pkg-row-price">$3,400</div></div></div>
+        <div class="pkg-row"><div><div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#504848;margin-bottom:0.4rem;">Long weekend</div><div class="h3">Thu – Mon</div><p class="body-text" style="margin-top:0.5rem;font-size:12px;">Four nights, full house. Martinborough wineries, walks, reading.</p></div><div style="text-align:right;"><div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#504848;">From</div><div class="pkg-row-price">$7,500</div></div></div>
+        <div class="pkg-row"><div><div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#504848;margin-bottom:0.4rem;">Week-long retreat</div><div class="h3">7 nights</div><p class="body-text" style="margin-top:0.5rem;font-size:12px;">A full week as resident of the estate.</p></div><div style="text-align:right;"><div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#504848;">From</div><div class="pkg-row-price">$12,500</div></div></div>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow">Add to your stay</p>
+      <h2 class="serif h2" style="margin-bottom:1.5rem;">Estate extras</h2>
+      <ul class="dotlist">
+        <li><span class="dot"></span>Private chef — $600 per day</li>
+        <li><span class="dot"></span>Martinborough wine tour — $250 per person</li>
+        <li><span class="dot"></span>Wairarapa gourmet hamper — $180</li>
+        <li><span class="dot"></span>In-estate massage — $180 per person</li>
+        <li><span class="dot"></span>Tennis coaching — $150 per session</li>
+        <li><span class="dot"></span>Guided estate history tour — complimentary</li>
+        <li><span class="dot"></span>Cape Palliser seal colony day trip — $90 pp</li>
+        <li><span class="dot"></span>Mini-golf on the grounds — complimentary</li>
+        <li><span class="dot"></span>Stables Taproom access — open weekends</li>
+      </ul>
+      <div style="margin-top:2rem;padding:1.5rem;border:0.5px solid rgba(200,185,139,0.2);background:#141410;">
+        <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#c8b98b;margin-bottom:0.6rem;">Also listed on</div>
+        <p class="body-text" style="font-size:12px;">Airbnb Luxe · The Plum Guide · I'm a Pilgrim<br>Direct bookings receive preferred rates.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ EVENTS PAGE ═══ -->
+<div class="page" id="page-events">
+  <div class="tab-bar">
+    <button class="tab-btn active">Signature Events</button>
+    <button class="tab-btn" onclick="showPage('home')">← Back to Estate</button>
+  </div>
+  <section class="section-black" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;">
+    <div>
+      <p class="eyebrow">Signature events</p>
+      <h1 class="serif h1">Private<br>occasions,<br><em style="font-style:italic;color:#c8b98b;">curated</em></h1>
+      <p class="body-text" style="margin-top:1.5rem;max-width:400px;">Eight evenings per year, open to a private guest list. Each one designed around the estate's character and the season. Minimum $200 per person.</p>
+    </div>
+    <div style="border:0.5px solid rgba(200,185,139,0.15);background:#141410;padding:1.8rem;">
+      <p class="eyebrow" style="margin-bottom:0.8rem;">Join the guest list</p>
+      <p class="body-text" style="font-size:12px;margin-bottom:1rem;">Past guests receive first access to each event before public release.</p>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <input class="lw-input" type="text" placeholder="Your name"/>
+        <input class="lw-input" type="email" placeholder="Email address"/>
+        <select class="lw-select"><option value="">Interests</option><option>Dining events</option><option>Literary and cultural</option><option>Wine and drinks</option><option>Garden and outdoor</option><option>All events</option></select>
+        <button class="btn-gold">Join the list</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:0.5rem;">
+      <div><p class="eyebrow">2027 Calendar</p><h2 class="serif h2">Coming to Longwood</h2></div>
+      <div style="display:flex;align-items:center;gap:1.5rem;font-size:11px;font-weight:300;">
+        <span style="display:flex;align-items:center;gap:0.4rem;"><span class="avail-dot open"></span><span style="color:#706860;">Available</span></span>
+        <span style="display:flex;align-items:center;gap:0.4rem;"><span class="avail-dot limited"></span><span style="color:#706860;">Limited</span></span>
+        <span style="display:flex;align-items:center;gap:0.4rem;"><span class="avail-dot sold"></span><span style="color:#706860;">Sold out</span></span>
+      </div>
+    </div>
+    <div style="margin-top:2rem;">
+      <div class="event-row"><div><div class="ev-month">March</div><div class="ev-day">14</div><div class="ev-year">2027 · Sat</div></div><div><div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.5rem;"><h3 class="h3">The Harvest Table</h3><span class="avail-dot open"></span></div><p class="body-text" style="font-size:12px;">Long-table dinner in the sunken garden at summer's close. Martinborough winemakers, guest chef, estate lit by lanterns. 60 guests. Black tie optional.</p><div style="margin-top:0.8rem;display:flex;gap:0.5rem;"><span class="pill" style="margin-bottom:0;">Dinner</span><span class="pill" style="margin-bottom:0;">Outdoor</span><span class="pill" style="margin-bottom:0;">60 guests</span></div></div><div style="text-align:right;min-width:90px;"><div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504848;margin-bottom:0.3rem;">Per person</div><div class="ev-price">$350</div><button class="btn-ghost" style="font-size:9px;padding:7px 12px;margin-top:0.8rem;">Reserve</button></div></div>
+      <div class="event-row"><div><div class="ev-month">April</div><div class="ev-day">18</div><div class="ev-year">2027 · Fri</div></div><div><div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.5rem;"><h3 class="h3">Napoleon's Library</h3><span class="avail-dot open"></span></div><p class="body-text" style="font-size:12px;">Intimate literary salon in the estate's panelled library. A celebrated author in conversation, rare Scottish whisky, and a formal dinner for thirty.</p><div style="margin-top:0.8rem;display:flex;gap:0.5rem;"><span class="pill" style="margin-bottom:0;">Literary</span><span class="pill" style="margin-bottom:0;">Dinner</span><span class="pill" style="margin-bottom:0;">30 guests</span></div></div><div style="text-align:right;min-width:90px;"><div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504848;margin-bottom:0.3rem;">Per person</div><div class="ev-price">$280</div><button class="btn-ghost" style="font-size:9px;padding:7px 12px;margin-top:0.8rem;">Reserve</button></div></div>
+      <div class="event-row"><div><div class="ev-month">June</div><div class="ev-day">21</div><div class="ev-year">2027 · Sat</div></div><div><div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.5rem;"><h3 class="h3">Midsummer Night</h3><span class="avail-dot limited"></span></div><p class="body-text" style="font-size:12px;">Theatrical garden party — lanterns, live music from a string quartet turning to jazz, Champagne sabrage at dusk, three-course supper on the lawn. 80 guests.</p><div style="margin-top:0.8rem;display:flex;gap:0.5rem;"><span class="pill" style="margin-bottom:0;">Garden party</span><span class="pill" style="margin-bottom:0;">Live music</span><span class="pill" style="margin-bottom:0;">80 guests</span></div></div><div style="text-align:right;min-width:90px;"><div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504848;margin-bottom:0.3rem;">Per person</div><div class="ev-price">$295</div><button class="btn-ghost" style="font-size:9px;padding:7px 12px;margin-top:0.8rem;">Reserve</button></div></div>
+      <div class="event-row"><div><div class="ev-month">August</div><div class="ev-day">03</div><div class="ev-year">2027 · Sun</div></div><div><div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.5rem;"><h3 class="h3">Vineyard and Vault</h3><span class="avail-dot open"></span></div><p class="body-text" style="font-size:12px;">Martinborough Pinot Noir masterclass in the Adam Room, guided by a Master of Wine alongside three leading winemakers. Curated charcuterie and aged cheeses. 40 guests.</p><div style="margin-top:0.8rem;display:flex;gap:0.5rem;"><span class="pill" style="margin-bottom:0;">Wine</span><span class="pill" style="margin-bottom:0;">Masterclass</span><span class="pill" style="margin-bottom:0;">40 guests</span></div></div><div style="text-align:right;min-width:90px;"><div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504848;margin-bottom:0.3rem;">Per person</div><div class="ev-price">$220</div><button class="btn-ghost" style="font-size:9px;padding:7px 12px;margin-top:0.8rem;">Reserve</button></div></div>
+      <div class="event-row"><div><div class="ev-month">November</div><div class="ev-day">29</div><div class="ev-year">2027 · Sat</div></div><div><div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.5rem;"><h3 class="h3">The Harvest Table II</h3><span class="avail-dot sold"></span></div><p class="body-text" style="font-size:12px;">Spring edition of the estate's signature long-table dinner. Join the waitlist — previous Harvest guests receive priority notification six weeks in advance.</p><div style="margin-top:0.8rem;display:flex;gap:0.5rem;"><span class="pill" style="margin-bottom:0;">Dinner</span><span class="pill" style="margin-bottom:0;">Outdoor</span><span class="pill" style="margin-bottom:0;">Waitlist only</span></div></div><div style="text-align:right;min-width:90px;"><div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#504848;margin-bottom:0.3rem;">Per person</div><div class="ev-price">$350</div><button class="btn-ghost" style="font-size:9px;padding:7px 12px;margin-top:0.8rem;">Waitlist</button></div></div>
+    </div>
+  </section>
+
+  <div style="background:#c8b98b;padding:3.5rem 3rem;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;">
+    <div>
+      <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#3a3228;margin-bottom:0.8rem;font-weight:500;">Private events</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:#1a1a17;line-height:1.1;">Host your own occasion at Longwood</h2>
+      <p style="font-size:13px;color:#3a3228;font-weight:300;line-height:1.8;margin-top:0.8rem;max-width:540px;">The estate's event spaces are available for private hire. We work with you to design the evening from the ground up.</p>
+    </div>
+    <button onclick="showPage('home');scrollToEnquire();" style="background:#1a1a17;color:#c8b98b;border:none;padding:14px 28px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;cursor:pointer;white-space:nowrap;">Enquire about private hire</button>
+  </div>
+</div>
+
+<script>
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  var pg=document.getElementById('page-'+name);
+  if(pg){pg.classList.add('active');}
+  var nav=document.getElementById('nav-'+name);
+  if(nav){nav.classList.add('active');}
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function scrollToEnquire(){
+  showPage('home');
+  setTimeout(function(){
+    var el=document.getElementById('enquire');
+    if(el){el.scrollIntoView({behavior:'smooth'});}
+  },100);
+}
+</script>
+</body>
+</html>
